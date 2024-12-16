@@ -1,0 +1,59 @@
+body {
+    background-color: #e6e6e6;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+.text-title {
+    color: #ff003c;
+    font-weight: bold;
+    text-shadow: 2px 2px #3a86ff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+textarea {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #3a86ff;
+}
+
+.animate-button {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.animate-button:hover {
+    transform: scale(1.1);
+    background-color: #3a86ff; /* Changed from #ff003c to #3a86ff */
+    color: white;
+}
+
+#speakButton:hover {
+    transform: scale(1.1);
+    background-color: #ff003c; /* Specific hover color for speak button */
+    color: white;
+}
+
+#stopButton:hover {
+    transform: scale(1.1);
+    background-color: #3a86ff; /* Specific hover color for stop button */
+    color: white;
+}
+
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    background-color: #3a86ff;
+    padding: 10px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
