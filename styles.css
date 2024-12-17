@@ -47,6 +47,21 @@ textarea {
     padding: 10px;
 }
 
+.footer-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
