@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const voiceSelect = document.getElementById('voiceSelect');
     const speakButton = document.getElementById('speakButton');
     const stopButton = document.getElementById('stopButton'); // Stop button
+    const progressBar = document.getElementById('progressBar');
 
     let voices = [];
 
@@ -44,11 +45,36 @@ document.addEventListener('DOMContentLoaded', () => {
         utterance.rate = 1; // Default rate
 
         speechSynthesis.speak(utterance);
+        updateProgressBar(utterance);
     };
 
     // Stop any ongoing speech
     const stopText = () => {
         speechSynthesis.cancel();
+        progressBar.style.width = '0%';
+    };
+
+    const updateProgressBar = (utterance) => {
+        const totalDuration = utterance.text.length / utterance.rate;
+        let elapsed = 0;
+
+        const interval = setInterval(() => {
+            elapsed += 0.1;
+            const progress = Math.min((elapsed / totalDuration) * 100, 100);
+            progressBar.style.width = `${progress}%`;
+
+            if (progress >= 100) {
+                clearInterval(interval);
+            }
+        }, 100);
+
+        utterance.onend = () => {
+            clearInterval(interval);
+            progressBar.style.width = '100%';
+            setTimeout(() => {
+                progressBar.style.width = '0%';
+            }, 500);
+        };
     };
 
     // Load voices dynamically
