@@ -1,5 +1,5 @@
 body {
-    background-color: #e6e6e6;
+    background-color: #dfdfdf;
     color: #333;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
@@ -71,4 +71,11 @@ textarea {
     height: 20px;
     background-color: #3a86ff;
     transition: width 0.1s ease;
+}
+
+.copyright-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
 }
